@@ -22,11 +22,17 @@ function fibonacciSequence(n) {
   return seq;
 }
 
+function fibonacciBinet(n) {
+  const phi = (1 + Math.sqrt(5)) / 2;
+  return Math.round(Math.pow(phi, n) / Math.sqrt(5));
+}
+
 function run() {
   console.log('=== Fibonacci ===');
   console.log(`Sequence (0-10): [${fibonacciSequence(10).join(', ')}]`);
   console.log(`fib(10) recursive: ${fibonacciRecursive(10)}`);
   console.log(`fib(10) iterative: ${fibonacciIterative(10)}`);
+  console.log(`fib(10) Binet's formula: ${fibonacciBinet(10)}`);
 }
 
 module.exports = { run };
